@@ -8,8 +8,6 @@ import spring.guru.udemy.petclinic.model.Owner;
 import spring.guru.udemy.petclinic.model.Vet;
 import spring.guru.udemy.petclinic.services.OwnerService;
 import spring.guru.udemy.petclinic.services.VetService;
-import spring.guru.udemy.petclinic.services.map.OwnerServiceMap;
-import spring.guru.udemy.petclinic.services.map.VetServiceMap;
 
 
 @Component
@@ -20,9 +18,9 @@ public class DataInitializer implements CommandLineRunner {
     private final OwnerService ownerService;
     private final VetService vetService;
 
-    public DataInitializer() {
-        this.ownerService = new OwnerServiceMap();
-        this.vetService = new VetServiceMap();
+    public DataInitializer(OwnerService ownerService, VetService vetService) {
+        this.ownerService = ownerService;
+        this.vetService = vetService;
     }
 
     @Override
