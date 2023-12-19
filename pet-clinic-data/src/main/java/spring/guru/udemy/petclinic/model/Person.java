@@ -1,8 +1,15 @@
 package spring.guru.udemy.petclinic.model;
 
 public class Person extends BaseEntity {
+
     private String firstName;
-    private String lasstName;
+    private String lastName;
+
+    public Person(Long id, String firstName, String lastName) {
+        super(id);
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
 
     public String getFirstName() {
         return firstName;
@@ -12,11 +19,11 @@ public class Person extends BaseEntity {
         this.firstName = firstName;
     }
 
-    public String getLasstName() {
-        return lasstName;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setLasstName(String lasstName) {
-        this.lasstName = lasstName;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 }
